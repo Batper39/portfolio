@@ -3,27 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+   <!-- Google Fonts: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
+  <title>My Portfolio</title>
 </head>
 <body>
-  <header>
-    <h1>Hello, I’m [Your Name]</h1>
-    <p>Designer, builder, and digital dreamer ✨</p>
-  </header>
-
+     <!-- ========== Navigation ========== -->
+    <nav>
+        <ul>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+      <!-- ========== Hero / About Section ========== -->
+      <header id="about" class="hero">
+        <div class="hero-content">
+          <h1>Hello, I'm Batel</h1>
+          <p>I design clean, intentional tools that solve real problems.</p>
+      
+          <div class="hero-buttons">
+            <a href="https://linkedin.com/in/batelberg" class="btn primary-btn" target="_blank">LinkedIn</a>
+            <a href="Batel Elberg CV.pdf" class="btn secondary-btn" target="_blank">Download CV</a>
+          </div>
+        </div>
+      </header>
   <main>
     <section>
       <h2>About Me</h2>
       <p>I’m a product designer learning to code and building cool stuff on the way.</p>
     </section>
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>Portfolio site (this one!)</li>
-        <li>Job tracker (coming soon!)</li>
-      </ul>
-    </section>
+    <!-- ========== Projects Section ========== -->
+    <section id="projects">
+        <h2>Projects</h2>
+                  <!-- Project 1 -->
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Admin Platform</h3>
+            <p>A platform that simplifies investment data management and supports decision-making for analysts and managers.</p>
+          </div>
+                    <!-- Project 2 -->
+          <div class="project-card">
+            <h3>Findy – Hiring App</h3>
+            <p>A tool to match candidates with jobs based on preferences, roles, and experience. Built with hiring managers and HR teams in mind.</p>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
+      <!-- ========== Footer ========== -->
+  <footer id="contact">
+    <p>Let’s connect → <a href="mailto:your@email.com">your@email.com</a></p>
+  </footer>
 </body>
 </html>
