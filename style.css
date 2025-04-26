@@ -17,68 +17,201 @@ body {
     margin: 0 auto;
     padding: 4rem 2rem;
   }
+  /* ========== Layout ========== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
 /* --- Navigation --- */
-/* === NAVBAR === */
-nav {
+.navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 100;
   }
   
-  nav .logo a {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #111;
-    letter-spacing: 1px;
+  .logo img {
+    height: 32px;
   }
   
-  nav ul {
+  .nav-links {
     display: flex;
-    list-style: none;
+    gap: 2rem;
   }
   
-  nav ul li {
-    margin-left: 1.5rem;
-  }
-  
-  nav ul li a {
-    font-size: 1rem;
-    font-weight: 500;
+  .nav-links a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 24px; /* depends on your font size */
     text-decoration: none;
     color: #111;
-    transition: color 0.2s ease;
+    font-weight: 500;
+    font-size: 1rem;
   }
   
-  nav ul li a:hover {
-    color: #007bff; /* Highlight color on hover */
+  .nav-links a span {
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  
+  .nav-links a span:last-child {
+    color: #aaa; /* second (hover) text is grey */
+    position: absolute;
+    top: 100%; /* start hidden below */
+    left: 0;
+  }
+  
+  /* Hover effect */
+  .nav-links a:hover span:first-child {
+    transform: translateY(-100%);
+  }
+  
+  .nav-links a:hover span:last-child {
+    transform: translateY(-100%);
+  }
+  
+  /* Pearl-style hover animation (underline effect) */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #111;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-button .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
   }
 
-  /* === HERO SECTION === */
+/* ========== Fade In Animation ========== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ========== Navbar Shrink ========== */
+  .navbar {
+    transition: all 0.3s ease;
+    padding: 2rem 4rem; /* default */
+  }
+  
+  .navbar.shrink {
+    padding: 1rem 4rem; /* smaller on scroll */
+  }
+
+/* ======= HERO SECTION ======= */
 .hero {
-    text-align: center;
-    padding: 8rem 2rem 6rem;
-    background-color: #fff;
+    padding: 4rem 0;
   }
   
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #111;
+  .container {
+    padding: 0 64px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   
-  .hero p {
-    font-size: 1.25rem;
-    color: #444;
-    margin-bottom: 2.5rem;
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+  }
+  
+  .hero-content {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+  }
+  
+  .hero-content h1 {
+    font-size: 64px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .hero-content p {
+    margin-top: 1.5rem;
+    font-size: 18px;
+    color: #666;
+    max-width: 500px;
+  }
+  
+  .hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Buttons basic style */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .primary-btn {
+    background-color: black;
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background-color: #333;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+  }
+  
+  .secondary-btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* ======= Responsive ======= */
+  @media (max-width: 768px) {
+    .hero-inner {
+      flex-direction: column;
+      text-align: center;
+      min-height: auto;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
   }
   
   /* === BUTTONS === */
@@ -189,16 +322,16 @@ nav {
   
   .card-content a {
     font-size: 0.95rem;
-    font-weight: 600;
-    color: #007bff;
+    font-weight: 500;
+    color: #909090;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     transition: all 0.3s ease;
   }
   
   .card-content a:hover {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
+    color: #474848;
+    border-bottom: 1px solid #111;
   }
   footer {
     text-align: center;

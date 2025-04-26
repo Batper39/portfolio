@@ -10,34 +10,35 @@
   <title>My Portfolio</title>
 </head>
 <body>
-     <!-- ========== Navigation ========== -->
-    <nav>
+     <!-- ========== Navbar ========== -->
+     <header class="navbar fade-in">
         <div class="logo">
-            <a href="#">Batel's Portfolio</a>
-          </div>
-        <ul>
-          <li><a href="#projects">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="container">
+          <!-- Your SVG logo here -->
+          <img src="images/logo.svg" alt="Logo" />
+        </div>
+        <nav class="nav-links">
+            <a href="#work"><span>Work</span><span aria-hidden="true">Work</span></a>
+            <a href="#about"><span>About</span><span aria-hidden="true">About</span></a>
+            <a href="#contact"><span>Contact</span><span aria-hidden="true">Contact</span></a>
+          </nav>
+        <div class="nav-button">
+          <a href="Batel Elberg CV.pdf" class="btn primary-btn" download>Download CV</a>
+        </div>
+      </header>
       <!-- ========== Hero / About Section ========== -->
       <header id="about" class="hero">
-        <div class="hero-content">
-          <h1>Hello, I'm Batel</h1>
-          <p>I design clean, intentional tools that solve real problems.</p>
-      
-          <div class="hero-buttons">
-            <a href="https://linkedin.com/in/batelberg" class="btn primary-btn" target="_blank">LinkedIn</a>
-            <a href="Batel Elberg CV.pdf" class="btn secondary-btn" target="_blank">Download CV</a>
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-content">
+              <h1>Hi, I'm Batel<br>A Product Designer</h1>
+              <p>I create intuitive digital experiences that connect people and technology.</p>
+              <div class="hero-buttons">
+                <a href="https://linkedin.com/in/batelberg" class="btn primary-btn" target="_blank">LinkedIn</a>
+              </div>
+            </div>
           </div>
         </div>
       </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I’m a product designer learning to code and building cool stuff on the way.</p>
-    </section>
     <!-- ========== Projects Section ========== -->
     <section id="projects">
         <h2>Projects</h2>
@@ -70,7 +71,8 @@
   </main>
       <!-- ========== Footer ========== -->
   <footer id="contact">
-    <p>Let’s connect → <a href="mailto:your@email.com">your@email.com</a></p>
+    <p>Let’s connect → <a href="mailto:batelpe1@gmail.com">batelpe1@gmail.com</a></p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
