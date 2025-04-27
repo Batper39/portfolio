@@ -507,3 +507,133 @@ html, body {
 
     }
   }
+/* ======================
+   Project Pages Styles
+====================== */
+
+.project-hero {
+    padding: 120px 64px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .project-hero h1 {
+    font-size: 64px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 16px;
+  }
+  
+  .project-hero .project-subtitle {
+    font-size: 20px;
+    color: #555;
+  }
+  
+  .project-intro,
+  .project-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 64px;
+    margin: 0 auto;
+    gap: 48px;
+  }
+  
+  .project-intro .intro-text,
+  .project-details p {
+    flex: 1;
+  }
+
+.project-hero img {
+    width: 100%;
+    max-width: 1200px; /* or whatever looks good */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* center the image */
+    padding: 0 24px; /* small side padding for mobile */
+  }
+  
+  .project-gallery {
+    max-width: 1200px;
+    margin: 64px auto;
+    padding: 0 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+ /* Container for the project gallery images */
+.project-gallery {
+    display: flex; /* This will place the images side by side */
+    gap: 16px; /* Adds space between the images */
+    justify-content: center; /* Center the images within the container */
+    margin-top: 32px;
+  }
+  
+  /* Frame for each image */
+  .gallery-image {
+    width: 50%; /* Adjust the width as needed */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Add your desired color here */
+    border: 0px solid #ddd; /* Border acting as the frame */
+    padding: 32px;
+    border-radius: 14px;
+  }
+  
+  /* Center the images inside the frame */
+  .gallery-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the frame without distortion */
+  }
+  
+  /* Project Footer */
+  .project-footer {
+    text-align: center;
+    margin: 80px 0;
+  }
+  
+  .project-footer .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+  
+  /* ======= Responsive ======= */
+  @media (max-width: 768px) {
+    .project-intro,
+    .project-details {
+      flex-direction: column;
+      padding: 32px;
+      gap: 24px;
+    }
+  
+    .project-hero {
+      padding: 80px 32px 24px;
+    }
+  
+    .project-gallery {
+      grid-template-columns: 1fr;
+      padding: 0 32px;
+    }
+  }
+  /* ========== Container ========== */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Makes sure content doesn’t stretch too wide */
+    padding: 0 64px; /* Adds padding on the left and right */
+    margin: 0 auto; /* Centers the content */
+  }
+  .project-hero img, 
+.project-intro img, 
+.project-details img, 
+.project-gallery img {
+  width: 100%; /* Ensure images scale responsively */
+  max-width: 100%; /* Keep images from stretching too far */
+  height: auto; /* Maintain aspect ratio */
+}
